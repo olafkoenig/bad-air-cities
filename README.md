@@ -1,6 +1,8 @@
 # 🌬️ Auto-updating Air Quality Website
 
-Une série de tutoriels pour créer des graphiques qui se mettent à jour automatiquement en utilisant **GitHub Actions**, **GitHub Pages** et **Datawrapper**. Un jour, il y aura même un lien vers la vidéo YouTube ! 🎥
+Une série de tutoriels pour créer des graphiques qui se mettent à jour automatiquement en utilisant **GitHub Actions**, **GitHub Pages** et **Datawrapper**.
+Voici la vidéo YouTube ! 🎥
+https://www.youtube.com/watch?v=QNKxzkNpsko
 
 ---
 
