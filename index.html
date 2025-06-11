@@ -1,53 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>The Bad Air Website</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: aliceblue;
-        }
-        /* Make the page 700px wide, centered */
-        .container {
-            width: 700px;
-            margin: 4em auto;
-        }
-        /* Use a nice font */
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Bad Air Website</title>
 
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            margin: 2em 0;
-        }
+  <!-- Roboto font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
 
-        .graphic {
-            max-width: 500px;
-            margin: 2em auto;
-        }
+  <style>
+    :root {
+      --primary-bg: #f0f8ff;
+      --footer-bg: #e0e7ff;
+      --text-color: #333;
+    }
 
-        #footer {
-            text-align: center;
-            padding: 4em;
-            background-color: #f0f1ff;
-            border-top: solid white 5px;
-        }
-    </style>
+    body {
+      margin: 0;
+      background-color: var(--primary-bg);
+      font-family: 'Roboto', sans-serif;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 4em auto;
+      padding: 0 1em;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8em;
+      margin-bottom: 0.5em;
+    }
+
+    h3 {
+      text-align: center;
+      font-weight: 400;
+      margin-bottom: 1em;
+    }
+
+    p {
+      font-size: 1.1em;
+      text-align: center;
+    }
+
+    .graphic {
+      margin: 2em auto;
+      max-width: 100%;
+    }
+
+    iframe {
+      width: 100% !important;
+      border: none;
+    }
+
+    #footer {
+      text-align: center;
+      padding: 2em 1em;
+      background-color: var(--footer-bg);
+      border-top: 5px solid white;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      h3 {
+        font-size: 1.1em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🌥️ The bad air website 🏭</h1>
-        <h3>Major cities of the world, ranked by their air quality</h3>
-        <p>The table below auto-updates every hour. Air quality is scored using the <a href="https://www.airnow.gov/aqi/aqi-basics/">US air quality index</a>.</p>
-        <div class="graphic">
-<iframe title="" aria-label="Tableau" id="datawrapper-chart-AYsNG" src="https://datawrapper.dwcdn.net/AYsNG/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1062" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
-</script>            </script>
-        </div>
+  <div class="container">
+    <h1>🌥️ The bad air website 🏭</h1>
+    <h3>Major cities of the world, ranked by their air quality</h3>
+    <p>
+      The table below auto-updates once a day.<br />
+      Air quality is scored using the
+      <a href="https://www.airnow.gov/aqi/aqi-basics/" target="_blank">US air quality index</a>.
+    </p>
+    <div class="graphic">
+      <iframe
+        title="Air Quality Ranking"
+        aria-label="Tableau"
+        id="datawrapper-chart-AYsNG"
+        src="https://datawrapper.dwcdn.net/AYsNG/1/"
+        scrolling="no"
+        frameborder="0"
+        height="1062"
+        data-external="1"
+      ></iframe>
+      <script>
+        window.addEventListener("message", function (event) {
+          if (event.data["datawrapper-height"]) {
+            const iframes = document.querySelectorAll("iframe");
+            for (let chartId in event.data["datawrapper-height"]) {
+              for (let i = 0; i < iframes.length; i++) {
+                if (iframes[i].contentWindow === event.source) {
+                  iframes[i].style.height = event.data["datawrapper-height"][chartId] + "px";
+                }
+              }
+            }
+          }
+        });
+      </script>
     </div>
-    <div id="footer">
-        <p>This website was made for a tutorial on <a href="https://jonathansoma.com">auto-updating websites</a>.</p>
-    </div>
+  </div>
+  <div id="footer">
+    <p>
+      This website was made following a tutorial from J Soma on
+      <a href="https://jonathansoma.com" target="_blank">auto-updating websites</a>.
+    </p>
+  </div>
+</body>
 </html>
